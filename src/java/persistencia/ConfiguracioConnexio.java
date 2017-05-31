@@ -15,8 +15,8 @@ public class ConfiguracioConnexio {
         driver="oracle.jdbc.driver.OracleDriver";
 //        cadenaConnexio = "jdbc:oracle:thin:@192.168.180.10:1521:INSLAFERRERI";
         cadenaConnexio = "jdbc:oracle:thin:@ieslaferreria.xtec.cat:8081:INSLAFERRERI";
-        usuari = "JM";
-        contrasenya = "8848";
+        usuari = "DAVIDBLANCO";
+        contrasenya = "1423";
     }
 
     public ConfiguracioConnexio(String driver,String cadenaConnexio, String usuari, String contrasenya) {
