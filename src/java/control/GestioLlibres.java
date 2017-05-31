@@ -137,7 +137,7 @@ public class GestioLlibres extends HttpServlet {
             estoc = Integer.parseInt(estok);
 
             dao = new LlibreDao(con);
-            dao.afegir(new Llibre(isbn, titol, autor, editorial, anyEdicio, estoc));
+            dao.afegir(new Llibre(titol,isbn, autor, editorial, anyEdicio, estoc));
         }
       
         return resposta;
