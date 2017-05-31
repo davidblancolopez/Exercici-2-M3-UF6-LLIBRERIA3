@@ -16,7 +16,7 @@ public class GestioLlibres extends HttpServlet {
     public void init() throws ServletException {
         super.init();
         dbCon = new ConfiguracioConnexio(this.getInitParameter("driver"),
-                this.getInitParameter("cadenaConnexioExt"),
+                this.getInitParameter("cadenaConnexioInt"),
                 this.getInitParameter("usuari"), this.getInitParameter("contrasenya"));
         con = dbCon.getConnexio();
     }
