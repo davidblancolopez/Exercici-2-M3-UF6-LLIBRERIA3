@@ -17,11 +17,11 @@
         </init-param>
         <init-param>
             <param-name>usuari</param-name>
-            <param-value>JM</param-value>
+            <param-value>DAVIDBLANCO</param-value>
         </init-param>
         <init-param>
             <param-name>contrasenya</param-name>
-            <param-value>8848</param-value>
+            <param-value>1423</param-value>
         </init-param>
     </servlet>
     <servlet-mapping>
