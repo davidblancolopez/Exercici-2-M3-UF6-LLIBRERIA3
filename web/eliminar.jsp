@@ -30,7 +30,7 @@
 
             </table>   
 
-            <% String resposta = (String) request.getAttribute("afegit");%>
+            <% String resposta = (String) request.getAttribute("eliminat");%>
              <a ><%=(resposta == null) ? "" : resposta%> </a>
 
         </form>
