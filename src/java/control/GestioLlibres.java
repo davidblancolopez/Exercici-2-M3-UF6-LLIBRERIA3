@@ -50,8 +50,8 @@ public class GestioLlibres extends HttpServlet {
                 anarAPagina("cercaTots.jsp", request, response);
             break;
             case "eliminar":
-                
-                request.setAttribute("cercarTots", llista);
+                String respostaEliminar = eliminarLlibre(request, response);
+                request.setAttribute("cercarTots", respostaEliminar);
                 anarAPagina("cercaTots.jsp", request, response);
             break;
         }
