@@ -25,7 +25,7 @@
                 </tr>
                
                 <tr>
-                   <td colspan="2" align="center"><input type="Submit" value="Afegir"></td>
+                   <td colspan="2" align="center"><input type="Submit" value="Cerca"></td>
                 </tr>                
 
             </table>   

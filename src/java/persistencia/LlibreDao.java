@@ -84,7 +84,7 @@ public class LlibreDao {
     public boolean eliminarLlibre(String isbn){
         boolean eliminat = true;
         PreparedStatement pt = null;
-        String sentencia = "DELETE FROM LLIBRE WHERE ISBN = '" + isbn + "'";
+        String sentencia = "DELETE FROM LLIBRE WHERE ISBN = " + isbn + "";
         try {
             pt = con.prepareStatement(sentencia);
 
