@@ -15,7 +15,7 @@
     
     
     
-    <a  href='afegir.jsp'>ELIMINAR LLIBRE</a><br><br>
+    <a  href='eliminar.jsp'>ELIMINAR LLIBRE</a><br><br>
     
     <p>&nbsp;</p>
     <%@ include file="myFooter.html" %>
