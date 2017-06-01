@@ -12,7 +12,7 @@ public class ConfiguracioConnexio {
     private boolean esOberta = false;
 
     public ConfiguracioConnexio() {
-        driver="oracle.jdbc.driver.OracleDriver";
+        driver = "oracle.jdbc.driver.OracleDriver";
 //        cadenaConnexio = "jdbc:oracle:thin:@192.168.180.10:1521:INSLAFERRERI";
         cadenaConnexio = "jdbc:oracle:thin:@ieslaferreria.xtec.cat:8081:INSLAFERRERI";
         usuari = "DAVIDBLANCO";
@@ -20,7 +20,7 @@ public class ConfiguracioConnexio {
     }
 
     public ConfiguracioConnexio(String driver,String cadenaConnexio, String usuari, String contrasenya) {
-        this.driver=driver;
+        this.driver = driver;
         this.cadenaConnexio = cadenaConnexio;
         this.usuari = usuari;
         this.contrasenya = contrasenya;

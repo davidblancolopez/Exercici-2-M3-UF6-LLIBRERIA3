@@ -41,7 +41,7 @@ public class LlibreDao {
     }
 
     public Llibre cercarPerISBN(String isbn) {
-        String consulta = " SELECT * FROM LLIBRE WHERE isbn='" + isbn + "'";
+        String consulta = " SELECT * FROM LLIBRE WHERE isbn ='" + isbn + "'";
         Statement st;
         ResultSet rs;
         Llibre llib = null;

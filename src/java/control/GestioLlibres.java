@@ -49,10 +49,15 @@ public class GestioLlibres extends HttpServlet {
                 request.setAttribute("cercarTots", llista);
                 anarAPagina("cercaTots.jsp", request, response);
             break;
+            case "cerca":
+                Llibre llibre = cercarLlibre(request, response);
+                request.setAttribute("cercat", llibre);
+                anarAPagina("cerca.jsp", request, response);
+            break;
             case "eliminar":
                 String respostaEliminar = eliminarLlibre(request, response);
                 request.setAttribute("eliminat", respostaEliminar);
-                anarAPagina("cercaTots.jsp", request, response);
+                anarAPagina("eliminar.jsp", request, response);
             break;
         }
 
@@ -159,12 +164,19 @@ public class GestioLlibres extends HttpServlet {
         List llista = dao.cercarTots();
         return llista;
     }
+    private Llibre cercarLlibre(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+        Llibre llibre = null;
+        LlibreDao dao = new LlibreDao(con);
+        
+        llibre = dao.cercarPerISBN(req.getParameter("isbn_"));
+        
+        return llibre;
+    }
     
     
     private String eliminarLlibre(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         LlibreDao dao = null;
         String isbn, missatge;
-        int anyEdicio, estoc;
         boolean validar = true;
         
         missatge = "Lllibre eliminat correctament";

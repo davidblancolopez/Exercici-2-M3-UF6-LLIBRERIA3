@@ -44,7 +44,7 @@
                     <td><input type="Text" name="estoc_" size="3"></td>
                 </tr>
                 <tr>
-                   <td colspan="2" align="center"><input type="Submit" value="Afegir"></td>
+                   <td colspan="2" align="center"><input type="Submit" value="afegir"></td>
                 </tr>                
 
             </table>   
