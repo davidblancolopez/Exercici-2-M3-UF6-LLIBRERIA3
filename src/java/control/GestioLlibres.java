@@ -2,6 +2,7 @@ package control;
 
 import java.io.*;
 import java.sql.*;
+import java.util.List;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import model.*;
@@ -44,7 +45,7 @@ public class GestioLlibres extends HttpServlet {
                 anarAPagina("afegir.jsp", request, response);
                 break;
             case "CercarTots":
-                
+                List llista = cerc
                 
             break;
         }
@@ -145,4 +146,15 @@ public class GestioLlibres extends HttpServlet {
       
         return resposta;
     }
+    
+    
+    private List<Llibre> cercarTots(){
+        LlibreDao dao = new LlibreDao(con);
+        List llista = dao.cercarTots();
+        return llista;
+    }
+    
+    
+    
+    
 }
