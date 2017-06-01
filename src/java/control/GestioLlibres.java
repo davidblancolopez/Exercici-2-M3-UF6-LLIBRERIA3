@@ -43,7 +43,10 @@ public class GestioLlibres extends HttpServlet {
                 request.setAttribute("afegit", resposta);
                 anarAPagina("afegir.jsp", request, response);
                 break;
-
+            case "CercarTots":
+                
+                
+            break;
         }
 
     }
