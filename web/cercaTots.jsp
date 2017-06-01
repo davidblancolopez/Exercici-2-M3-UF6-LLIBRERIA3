@@ -8,7 +8,7 @@
 <%@page import="java.util.List"%>
 <%@page import="model.Llibre"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%! List<Llibre> llibres; %>
+<%! List<Llibre> llibres ; %>
 <!DOCTYPE html>
 <html>
     <head>
@@ -16,6 +16,9 @@
         <title>Llibres llibreria</title>
     </head>
     <body>
+        <%@ include file="myHeader.html" %>
+        
+        
         <table cellspacing="2" cellpadding="2" border="0" align="center">
                 <tr>
                     <td align = "center">ISBN:</td>

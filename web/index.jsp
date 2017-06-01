@@ -12,6 +12,7 @@
     <a  href='afegir.jsp'>AFEGIR NOU LLIBRE</a><br><br>
 
     <a href='cercarTots.jsp'>LLISTAR TOTS ELS LLIBRES</a><br><br>
+    
     <p>&nbsp;</p>
     <%@ include file="myFooter.html" %>
 </body>

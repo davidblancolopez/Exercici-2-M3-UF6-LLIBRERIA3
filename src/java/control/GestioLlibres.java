@@ -45,8 +45,9 @@ public class GestioLlibres extends HttpServlet {
                 anarAPagina("afegir.jsp", request, response);
                 break;
             case "CercarTots":
-                List llista = cerc
-                
+                List llista = cercarTots();
+                request.setAttribute("cercarTots", llista);
+                anarAPagina("cercaTots.jsp", request, response);
             break;
         }
 

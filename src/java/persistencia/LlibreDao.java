@@ -80,6 +80,26 @@ public class LlibreDao {
         }
         return llista;
     }
+    
+    private boolean eliminarLlibre(String isbn){
+        boolean eliminat = true;
+        PreparedStatement pt = null;
+        String sentencia = "DELETE FROM LLIBRE WHERE ISBN = '" + isbn + "'";
+        try {
+            pt = con.prepareStatement(sentencia);
+
+            if (pt.executeUpdate() == 0) {
+                eliminat = false;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            eliminat = false;
+        } finally {
+            tancarRecurs(pt);
+        }
+        
+        return eliminat;
+    }
 
     private void tancarRecurs(AutoCloseable r) {
         try {
