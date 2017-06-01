@@ -49,6 +49,11 @@ public class GestioLlibres extends HttpServlet {
                 request.setAttribute("cercarTots", llista);
                 anarAPagina("cercaTots.jsp", request, response);
             break;
+            case "eliminar":
+                
+                request.setAttribute("cercarTots", llista);
+                anarAPagina("cercaTots.jsp", request, response);
+            break;
         }
 
     }
@@ -156,6 +161,22 @@ public class GestioLlibres extends HttpServlet {
     }
     
     
-    
+    private String eliminarLlibre(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+        LlibreDao dao = null;
+        String isbn, missatge;
+        int anyEdicio, estoc;
+        boolean validar = true;
+        
+        missatge = "Lllibre eliminat correctament";
+        if (!(isbn = req.getParameter("isbn_")).matches("[0-9]{13}")) {
+            missatge = "ISBN incorrecte, ha d'estar format per 13 dígits";
+            validar = false;
+        }else {
+            dao = new LlibreDao(con);
+            dao.eliminarLlibre(isbn);
+        }
+        
+        return missatge;
+    }
     
 }
