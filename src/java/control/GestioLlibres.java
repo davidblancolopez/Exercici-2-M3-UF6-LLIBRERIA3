@@ -159,7 +159,7 @@ public class GestioLlibres extends HttpServlet {
     }
     
     
-    private List<Llibre> cercarTots(){
+    public List<Llibre> cercarTots(){
         LlibreDao dao = new LlibreDao(con);
         List llista = dao.cercarTots();
         return llista;

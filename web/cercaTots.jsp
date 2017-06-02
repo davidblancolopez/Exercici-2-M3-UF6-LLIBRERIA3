@@ -5,6 +5,7 @@
 --%>
 
 
+<%@page import="control.GestioLlibres"%>
 <%@page import="java.util.List"%>
 <%@page import="model.Llibre"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,35 +18,23 @@
     </head>
     <body>
         <%@ include file="myHeader.html" %>
-        
-        
-        <table cellspacing="2" cellpadding="2" border="0" align="center">
-                <tr>
-                    <td align = "center">ISBN:</td>
-                    
-                </tr>
-                <tr>
-                    <td align="right">Títol:</td>
-                    
-                </tr>
-                <tr>
-                    <td align="right">Autor:</td>
-                    
-                </tr>
-                <tr>
-                    <td align="right">Editorial:</td>
-                    
-                </tr>               
-                <tr>
-                    <td align="right">Any edició:</td>
-                    
-                </tr>
-                <tr>
-                    <td align="right">Estoc:</td>
-                    
-                </tr>         
-
-            </table> 
+        <%
+            GestioLlibres g = new GestioLlibres();
+            List<Llibre> llibres = g.cercarTots();
+            
+            if(llibres != null){
+            for(Llibre i : llibres){
+                System.out.println("ISBN: " + i.getIsbn() + "\n"
+                        + "Titol: " + i.getTitol() + "\n"
+                        + "Autor: " + i.getAutor() + "\n"
+                        + "Editorial: " + i.getEditorial() + "\n"
+                        + "Any edició: " + i.getAnyEdicio() + "\n"
+                        + "Estoc: " + i.getEstoc());
+            }
+            }else{
+                System.out.println("NANANA");
+            }
+        %>
     </body>
     <a  href='index.jsp'>Tornar</a><br><br>
 </html>
