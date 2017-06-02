@@ -83,12 +83,10 @@ public class LlibreDao {
     
     public boolean eliminarLlibre(String isbn){
         boolean eliminat = false;
-        String consulta = "DELETE FROM LLIBRE WHERE ISBN = ?";
-        PreparedStatement ps;
+        String consulta = "DELETE FROM LLIBRE WHERE ISBN = " + isbn;
         try {
-            ps = con.prepareStatement(consulta);
-            ps.setString(1, isbn);
-            ps.executeUpdate();
+            con.prepareStatement(consulta);
+
             eliminat = true;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
