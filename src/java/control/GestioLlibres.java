@@ -164,6 +164,9 @@ public class GestioLlibres extends HttpServlet {
         List llista = dao.cercarTots();
         return llista;
     }
+    
+    
+    
     private Llibre cercarLlibre(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
         Llibre llibre = null;
         LlibreDao dao = new LlibreDao(con);

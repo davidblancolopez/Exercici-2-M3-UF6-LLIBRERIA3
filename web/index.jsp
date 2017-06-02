@@ -11,7 +11,7 @@
     <tr align="center"> 
     <a  href='afegir.jsp'>AFEGIR NOU LLIBRE</a><br><br>
 
-    <a href='cercaTots.jsp' input type="Submit" value="CercarTots">LLISTAR TOTS ELS LLIBRES</a><br><br>
+    <a href='cercaTots.jsp'>LLISTAR TOTS ELS LLIBRES</a><br><br>
     
     
     
