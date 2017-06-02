@@ -18,23 +18,59 @@
     </head>
     <body>
         <%@ include file="myHeader.html" %>
-        <%
-            GestioLlibres g = new GestioLlibres();
-            List<Llibre> llibres = g.cercarTots();
+
+        <form action="GestioLlibres?accio=cercat" method="post">            
+
+            <center><b>Cerca de tots els llibres:</b></center>
+            <br><br>
+            <%
+            List<Llibre>llibres=null;
+            for (Llibre l : llibres) {
+            %>
+            <table cellspacing="2" cellpadding="2" border="0" align="center">
+                <tr>
+                    <td colspan="2" align="center"><h4>Dades del llibre</h4></td>
+                </tr>                
+                <tr>
+                    <td align="right">ISBN:</td>
+                    <td><input type="Text" value="<%=l.getIsbn()%>"></td>
+                </tr>  
+                <tr>
+                    <td align="right">Títol:</td>
+                    <td><input type="Text" value="<%=l.getTitol()%>"></td>
+                </tr>
+                <tr>
+                    <td align="right">Autor:</td>
+                    <td><input type="Text" value="<%=l.getAutor()%>"></td>
+                </tr>
+                <tr>
+                    <td align="right">Editorial:</td>
+                    <td><input type="Text" value="<%=l.getEditorial()%>"></td>
+                </tr>               
+                <tr>
+                    <td align="right">Any edició:</td>
+                    <td><input type="Text" value="<%=l.getAnyEdicio()%>"></td>
+                </tr>
+                <tr>
+                    <td align="right">Estoc:</td>
+                    <td><input type="Text" value="<%=l.getEstoc()%>"></td>
+                </tr>
+                <tr>
+                   <td colspan="2" align="center"><input type="Submit" value="Cerca"></td>
+                </tr> 
+
+            </table> 
+            <%}%>
+              
+
+            <% String resposta = (String) request.getAttribute("eliminat");%>
+            <a ><%=(resposta == null) ? "" : resposta%> </a>
+
+        </form>
             
-            if(llibres != null){
-            for(Llibre i : llibres){
-                System.out.println("ISBN: " + i.getIsbn() + "\n"
-                        + "Titol: " + i.getTitol() + "\n"
-                        + "Autor: " + i.getAutor() + "\n"
-                        + "Editorial: " + i.getEditorial() + "\n"
-                        + "Any edició: " + i.getAnyEdicio() + "\n"
-                        + "Estoc: " + i.getEstoc());
-            }
-            }else{
-                System.out.println("NANANA");
-            }
-        %>
+        <br>
+        <br>
+        <a href='index.jsp'>TORNAR</a>
     </body>
     <a  href='index.jsp'>Tornar</a><br><br>
 </html>
