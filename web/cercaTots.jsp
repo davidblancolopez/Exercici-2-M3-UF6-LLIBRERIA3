@@ -63,7 +63,7 @@
             <%}%>
               
 
-            <% String resposta = (String) request.getAttribute("eliminat");%>
+            <% String resposta = (String) request.getAttribute("cercatTots");%>
             <a ><%=(resposta == null) ? "" : resposta%> </a>
 
         </form>

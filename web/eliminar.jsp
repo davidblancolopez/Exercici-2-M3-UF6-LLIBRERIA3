@@ -25,7 +25,7 @@
                 </tr>
                
                 <tr>
-                   <td colspan="2" align="center"><input type="Submit" value="Eliminar"></td>
+                   <td colspan="2" align="center"><input type="Submit" value="eliminar"></td>
                 </tr>                
 
             </table>   

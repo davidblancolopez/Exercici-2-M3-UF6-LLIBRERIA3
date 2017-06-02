@@ -62,7 +62,7 @@ public class LlibreDao {
     }
 
     public List<Llibre> cercarTots() {
-        String consulta = " SELECT * FROM LLIBRE";
+        String consulta = "SELECT * FROM LLIBRE";
         Statement st;
         ResultSet rs;
         List<Llibre> llista = new ArrayList<>();
@@ -94,6 +94,33 @@ public class LlibreDao {
             System.out.println(ex.getMessage());
         }
         return eliminat;
+    }
+    
+    public boolean modificar (Llibre llib){
+        boolean afegit = true;
+        PreparedStatement pt = null;
+        String sentencia = "INSERT INTO LLIBRE (ISBN,TITOL,AUTOR,EDITORIAL,ANYEDICIO,ESTOC)"
+                + " VALUES(?,?,?,?,?,?)";
+        try {
+            pt = con.prepareStatement(sentencia);
+            pt.setString(1, llib.getIsbn());
+            pt.setString(2, llib.getTitol());
+            pt.setString(3, llib.getAutor());
+            pt.setString(4, llib.getEditorial());
+            pt.setInt(5, llib.getAnyEdicio());
+            pt.setInt(6, llib.getEstoc());
+
+            if (pt.executeUpdate() == 0) {
+                afegit = false;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            afegit = false;
+        } finally {
+            tancarRecurs(pt);
+        }
+
+        return afegit;
     }
 
     private void tancarRecurs(AutoCloseable r) {
