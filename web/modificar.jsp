@@ -41,7 +41,7 @@
                 </tr>
                 <tr>
                     <td align="right">ISBN:</td>
-                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getIsbn()%>"></td>
+                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getIsbn()%>"Readonly></td>
                     <td colspan="2" align="center"><input type="Submit" value="Modificar"></td>
                 </tr>
                 

@@ -14,10 +14,11 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Llibres llibreria</title>
+        <title>Cercar llibre per ISBN</title>
     </head>
-    <body>
-         <%@ include file="myHeader.html" %>
+    <body bgcolor="#FFFF99" >
+
+        <%@ include file="myHeader.html" %>
             <center><b>Realitza la cerca per ISBN:</b></center>
             <br><br>
             <table cellspacing="2" cellpadding="2" align="center" border="1">
@@ -43,10 +44,10 @@
 
 
 
-        </form>
         <br>
         <br>
         <a href="index.jsp">Tornar</a>
+
+
     </body>
-    <a  href='index.jsp'>Tornar</a><br><br>
 </html>
