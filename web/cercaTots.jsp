@@ -17,60 +17,36 @@
         <title>Llibres llibreria</title>
     </head>
     <body>
-        <%@ include file="myHeader.html" %>
-
-        <form action="GestioLlibres?accio=cercat" method="post">            
-
-            <center><b>Cerca de tots els llibres:</b></center>
+         <%@ include file="myHeader.html" %>
+            <center><b>Realitza la cerca per ISBN:</b></center>
             <br><br>
-            <%
-            List<Llibre>llibres=null;
-            for (Llibre l : llibres) {
-            %>
-            <table cellspacing="2" cellpadding="2" border="0" align="center">
+            <table cellspacing="2" cellpadding="2" align="center" border="1">
+
                 <tr>
-                    <td colspan="2" align="center"><h4>Dades del llibre</h4></td>
-                </tr>                
-                <tr>
-                    <td align="right">ISBN:</td>
-                    <td><input type="Text" value="<%=l.getIsbn()%>"></td>
-                </tr>  
-                <tr>
-                    <td align="right">Títol:</td>
-                    <td><input type="Text" value="<%=l.getTitol()%>"></td>
-                </tr>
-                <tr>
-                    <td align="right">Autor:</td>
-                    <td><input type="Text" value="<%=l.getAutor()%>"></td>
-                </tr>
-                <tr>
-                    <td align="right">Editorial:</td>
-                    <td><input type="Text" value="<%=l.getEditorial()%>"></td>
+                    <td align="right">ISBN</td> <td align="right">TITOL</td> <td align="right">AUTOR</td> <td align="right">EDITORIAL</td> <td align="right">ANYEDICIO</td> <td align="right">ESTOC</td>                    
                 </tr>               
-                <tr>
-                    <td align="right">Any edició:</td>
-                    <td><input type="Text" value="<%=l.getAnyEdicio()%>"></td>
-                </tr>
-                <tr>
-                    <td align="right">Estoc:</td>
-                    <td><input type="Text" value="<%=l.getEstoc()%>"></td>
-                </tr>
-                <tr>
-                   <td colspan="2" align="center"><input type="Submit" value="Cerca"></td>
-                </tr> 
+                <% List<Llibre> resposta = (List<Llibre>) request.getAttribute("cercatTots");%>
+                <a ><%if (!resposta.isEmpty()) {
+                            for (Llibre llibre : resposta) {
+                                %>
+                                <tr>
+                                    <td><%= llibre.getIsbn()%></td><td><%= llibre.getTitol()%></td><td><%= llibre.getAutor()%></td><td><%= llibre.getEditorial()%></td><td><%= llibre.getAnyEdicio()%></td><td><%= llibre.getEstoc()%></td>
+                                </tr>
+                                <%
+                            }
+                        } else {
+                            out.print("Sense llibres");
+                        }
+                    %>
 
-            </table> 
-            <%}%>
-              
+            </table>   
 
-            <% String resposta = (String) request.getAttribute("cercatTots");%>
-            <a ><%=(resposta == null) ? "" : resposta%> </a>
+
 
         </form>
-            
         <br>
         <br>
-        <a href='index.jsp'>TORNAR</a>
+        <a href="index.jsp">Tornar</a>
     </body>
     <a  href='index.jsp'>Tornar</a><br><br>
 </html>

@@ -10,6 +10,8 @@
         <h1 align="center" >Seleccionar opció:</h1><br><br><br>
     <tr align="center"> 
     <a  href='afegir.jsp'>AFEGIR NOU LLIBRE</a><br><br>
+    
+    <a href='modificar.jsp'>MODIFICAR UN LLIBRE</a><br><br>
 
     <a href='cerca.jsp'>CERCA UN LLIBRE</a><br><br>
     

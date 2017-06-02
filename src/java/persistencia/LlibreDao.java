@@ -20,8 +20,8 @@ public class LlibreDao {
                 + " VALUES(?,?,?,?,?,?)";
         try {
             pt = con.prepareStatement(sentencia);
-            pt.setString(1, llib.getIsbn());
-            pt.setString(2, llib.getTitol());
+            pt.setString(1, llib.getTitol());
+            pt.setString(2, llib.getIsbn());
             pt.setString(3, llib.getAutor());
             pt.setString(4, llib.getEditorial());
             pt.setInt(5, llib.getAnyEdicio());
@@ -40,6 +40,11 @@ public class LlibreDao {
         return afegit;
     }
 
+    
+    
+    
+    
+    
     public Llibre cercarPerISBN(String isbn) {
         String consulta = " SELECT * FROM LLIBRE WHERE isbn ='" + isbn + "'";
         Statement st;
@@ -61,6 +66,10 @@ public class LlibreDao {
         return llib;
     }
 
+    
+    
+            
+            
     public List<Llibre> cercarTots() {
         String consulta = "SELECT * FROM LLIBRE";
         Statement st;
@@ -81,46 +90,66 @@ public class LlibreDao {
         return llista;
     }
     
-    public boolean eliminarLlibre(String isbn){
-        boolean eliminat = false;
-        String consulta = "DELETE FROM LLIBRE WHERE ISBN = " + isbn;
-        try {
-            con.prepareStatement(consulta);
-
-            eliminat = true;
-        } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
-        }
-        return eliminat;
-    }
     
-    public boolean modificar (Llibre llib){
-        boolean afegit = true;
+    
+    
+    
+    
+    public boolean eliminarLlibre(String isbn){
+        boolean eliminat = true;
         PreparedStatement pt = null;
-        String sentencia = "INSERT INTO LLIBRE (ISBN,TITOL,AUTOR,EDITORIAL,ANYEDICIO,ESTOC)"
-                + " VALUES(?,?,?,?,?,?)";
+        String sentencia = "DELETE FROM LLIBRE WHERE ISBN = ?";
         try {
             pt = con.prepareStatement(sentencia);
-            pt.setString(1, llib.getIsbn());
-            pt.setString(2, llib.getTitol());
-            pt.setString(3, llib.getAutor());
-            pt.setString(4, llib.getEditorial());
-            pt.setInt(5, llib.getAnyEdicio());
-            pt.setInt(6, llib.getEstoc());
+            pt.setString(1, isbn);
 
             if (pt.executeUpdate() == 0) {
-                afegit = false;
+                eliminat = false;
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            afegit = false;
+            eliminat = false;
         } finally {
             tancarRecurs(pt);
         }
 
-        return afegit;
+        return eliminat;
+    }
+    
+    
+    
+    
+    
+    public boolean modificar (Llibre llib){
+         boolean modificat = true;
+        PreparedStatement pt = null;
+        String sentencia = "UPDATE LLIBRE SET TITOL = ?, AUTOR = ?, EDITORIAL = ?, ANYEDICIO = ?, ESTOC = ? WHERE ISBN = ?";
+        try {
+            pt = con.prepareStatement(sentencia);
+            pt.setString(1, llib.getTitol());
+            pt.setString(2, llib.getAutor());
+            pt.setString(3, llib.getEditorial());
+            pt.setInt(4, llib.getAnyEdicio());
+            pt.setInt(5, llib.getEstoc());
+            pt.setString(6, llib.getIsbn());
+
+            if (pt.executeUpdate() == 0) {
+                modificat = false;
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+            modificat = false;
+        } finally {
+            tancarRecurs(pt);
+        }
+        return modificat;
     }
 
+    
+    
+    
+    
+    
     private void tancarRecurs(AutoCloseable r) {
         try {
             r.close();
