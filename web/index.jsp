@@ -11,9 +11,9 @@
     <tr align="center"> 
     <a  href='afegir.jsp'>AFEGIR NOU LLIBRE</a><br><br>
 
+    <a href='cerca.jsp'>CERCA UN LLIBRE</a><br><br>
+    
     <a href='cercaTots.jsp'>LLISTAR TOTS ELS LLIBRES</a><br><br>
-    
-    
     
     <a  href='eliminar.jsp'>ELIMINAR LLIBRE</a><br><br>
     

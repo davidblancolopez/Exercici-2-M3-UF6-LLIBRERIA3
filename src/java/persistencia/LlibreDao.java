@@ -16,12 +16,12 @@ public class LlibreDao {
     public boolean afegir(Llibre llib) {
         boolean afegit = true;
         PreparedStatement pt = null;
-        String sentencia = "INSERT INTO LLIBRE(TITOL,ISBN,AUTOR,EDITORIAL,ANYEDICIO,ESTOC)"
+        String sentencia = "INSERT INTO LLIBRE (ISBN,TITOL,AUTOR,EDITORIAL,ANYEDICIO,ESTOC)"
                 + " VALUES(?,?,?,?,?,?)";
         try {
             pt = con.prepareStatement(sentencia);
-            pt.setString(1, llib.getTitol());
-            pt.setString(2, llib.getIsbn());
+            pt.setString(1, llib.getIsbn());
+            pt.setString(2, llib.getTitol());
             pt.setString(3, llib.getAutor());
             pt.setString(4, llib.getEditorial());
             pt.setInt(5, llib.getAnyEdicio());
@@ -82,22 +82,17 @@ public class LlibreDao {
     }
     
     public boolean eliminarLlibre(String isbn){
-        boolean eliminat = true;
-        PreparedStatement pt = null;
-        String sentencia = "DELETE FROM LLIBRE WHERE ISBN = " + isbn + "";
+        boolean eliminat = false;
+        String consulta = "DELETE FROM Llibres WHERE ISBN = ?";
+        PreparedStatement ps;
         try {
-            pt = con.prepareStatement(sentencia);
-
-            if (pt.executeUpdate() == 0) {
-                eliminat = false;
-            }
+            ps = con.prepareStatement(consulta);
+            ps.setString(1, isbn);
+            ps.executeUpdate();
+            eliminat = true;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
-            eliminat = false;
-        } finally {
-            tancarRecurs(pt);
         }
-        
         return eliminat;
     }
 
