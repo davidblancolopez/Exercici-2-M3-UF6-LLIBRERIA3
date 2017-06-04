@@ -30,27 +30,27 @@
                 </tr>
                 <tr>
                     <td align="right">Títol:</td>
-                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getTitol()%>"></td>
+                    <td><input type="Text" name="titol_" size="13" value="<%=resposta == null ? "" : resposta.getTitol()%>"></td>
 
                 </tr>
                 <tr>
                     <td align="right">Autor:</td>
-                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getAutor()%>"></td>
+                    <td><input type="Text" name="autor_" size="13" value="<%=resposta == null ? "" : resposta.getAutor()%>"></td>
  
                 </tr>
                 <tr>
                     <td align="right">Editorial:</td>
-                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getEditorial()%>"></td>
+                    <td><input type="Text" name="editorial_" size="13" value="<%=resposta == null ? "" : resposta.getEditorial()%>"></td>
                     
                 </tr>
                 <tr>
                     <td align="right">Any edició:</td>
-                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getAnyEdicio()%>"></td>
+                    <td><input type="Text" name="anyEdicio_" size="13" value="<%=resposta == null ? "" : resposta.getAnyEdicio()%>"></td>
                 
                 </tr>
                 <tr>
                     <td align="right">Estoc:</td>
-                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getEstoc()%>"></td>
+                    <td><input type="Text" name="estoc_" size="13" value="<%=resposta == null ? "" : resposta.getEstoc()%>"></td>
 
                 </tr>
                 
