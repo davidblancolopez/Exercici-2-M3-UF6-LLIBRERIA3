@@ -15,7 +15,7 @@
 
     <a href='cerca.jsp'>CERCA UN LLIBRE</a><br><br>
     
-    <a href='cercaTots.jsp'>LLISTAR TOTS ELS LLIBRES</a><br><br>
+    <a href='GestioLlibres?accio=cercaTots'>LLISTAR TOTS ELS LLIBRES</a><br><br>
     
     <a  href='eliminar.jsp'>ELIMINAR LLIBRE</a><br><br>
     
