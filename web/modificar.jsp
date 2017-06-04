@@ -1,5 +1,5 @@
 <%@page import="model.Llibre"%>
-3<%-- 
+<%-- 
     Document   : modificar
     Created on : 02-jun-2017, 19:43:12
     Author     : ALUMNEDAM
