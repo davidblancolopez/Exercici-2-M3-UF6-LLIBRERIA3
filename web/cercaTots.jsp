@@ -21,7 +21,7 @@
         <%@ include file="myHeader.html" %>
             <center><b>Realitza la cerca per ISBN:</b></center>
             <br><br>
-            <table cellspacing="2" cellpadding="2" align="center" border="1">
+            <table cellspacing="1" cellpadding="1" align="center" border="0">
 
                 <tr>
                     <td align="right">ISBN</td> <td align="right">TITOL</td> <td align="right">AUTOR</td> <td align="right">EDITORIAL</td> <td align="right">ANYEDICIO</td> <td align="right">ESTOC</td>                    

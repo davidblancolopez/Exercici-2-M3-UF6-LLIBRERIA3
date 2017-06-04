@@ -1,4 +1,3 @@
-<%@page import="model.Llibre"%>
 <%-- 
     Document   : modificar
     Created on : 02-jun-2017, 19:43:12
@@ -13,44 +12,61 @@
         <title>JSP Page</title>
     </head>
     <body>
-         <% Llibre resposta = (Llibre) request.getAttribute("cercat");%>
+        
         <%@ include file="myHeader.html" %>
-        <form action="GestioLlibres?accio=modificar" method="post">          
-            <center><b>Dades del llibre:</b></center>
-            <br><br>
+
+        <form action="GestioLlibres?accio=modificar" method="post">            
+
+            <center><b><h3>Llibre a modificar:</h3></b></center>
+            
             <table cellspacing="2" cellpadding="2" border="0" align="center">
                 <tr>
+                    <td></td>
+                    <td><h4>ISBN del llibre a modificar</h4></td>
+                </tr>
+                <!--<center><h4>ISBN del llibre a modificar</h4></center>-->
+                <tr>
+                    <td align="right">ISBN:</td>
+                    <td><input type="Text" name="isbn_" size="13"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h4>Dades que es volen modificar</h4></td>
+                    <!--<td colspan="2" align="center"><h4>Dades que es volen modificar</h4></td>-->
+                </tr>               
+                
+                <tr>
                     <td align="right">Títol:</td>
-                    <td><input type="Text" name="titol_" size="30" value="<%=resposta == null ? "" : resposta.getTitol()%>" ></td>
+                    <td><input type="Text" name="titol_" size="30"></td>
                 </tr>
                 <tr>
                     <td align="right">Autor:</td>
-                    <td><input type="Text" name="autor_" size="30" value="<%=resposta == null ? "" : resposta.getAutor()%>" ></td>
+                    <td><input type="Text" name="autor_" size="30"></td>
                 </tr>
                 <tr>
                     <td align="right">Editorial:</td>
-                    <td><input type="Text" name="editorial_" size="20" value="<%=resposta == null ? "" : resposta.getEditorial()%>" ></td> 
+                    <td><input type="Text" name="editorial_" size="20"></td> 
                 </tr>               
                 <tr>
                     <td align="right">Any edició:</td>
-                    <td><input type="Text" name="anyEdicio_" size="4" value="<%=resposta == null ? "" : resposta.getAnyEdicio()%>" ></td>
+                    <td><input type="Text" name="anyEdicio_" size="4"></td>
                 </tr>
                 <tr>
                     <td align="right">Estoc:</td>
-                    <td><input type="Text" name="estoc_" size="3" value="<%=resposta == null ? "" : resposta.getEstoc()%>" ></td>
+                    <td><input type="Text" name="estoc_" size="3"></td>
                 </tr>
                 <tr>
-                    <td align="right">ISBN:</td>
-                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getIsbn()%>"Readonly></td>
-                    <td colspan="2" align="center"><input type="Submit" value="Modificar"></td>
-                </tr>
-                
-                <% String resposta2 = (String) request.getAttribute("modificat");%>
-                <a ><%=(resposta2 == null) ? "" : resposta2%> </a>
+                   <td colspan="2" align="center"><input type="Submit" value="Modificar"></td>
+                </tr>                
+
             </table>   
+
+            <% String resposta = (String) request.getAttribute("modificat");%>
+             <a ><%=(resposta == null) ? "" : resposta%> </a>
+
         </form>
         <br>
         <br>
-        <a href="index.jsp">Tornar</a>
+        <a href='index.jsp'>TORNAR</a>
     </body>
 </html>

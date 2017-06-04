@@ -121,7 +121,7 @@ public class LlibreDao {
     
     
     public boolean modificar (Llibre llib){
-         boolean modificat = true;
+        boolean modificat = true;
         PreparedStatement pt = null;
         String sentencia = "UPDATE LLIBRE SET TITOL = ?, AUTOR = ?, EDITORIAL = ?, ANYEDICIO = ?, ESTOC = ? WHERE ISBN = ?";
         try {

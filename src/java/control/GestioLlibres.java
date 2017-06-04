@@ -205,8 +205,7 @@ public class GestioLlibres extends HttpServlet {
         LlibreDao dao = null;
         String isbn, titol, autor, editorial, any, estok;
         int anyEdicio, estoc;
-        dao = new LlibreDao(con);
-        String resposta;
+        String resposta="Llibre modificat correctament";
         if (!(isbn = req.getParameter("isbn_")).matches("[0-9]{13}")) {
             resposta = "ISBN incorrecte, ha d'estar format per 13 dígits";
         } else if (!(any = req.getParameter("anyEdicio_")).matches("^[1-9][0-9]{1,3}")) {
@@ -222,7 +221,7 @@ public class GestioLlibres extends HttpServlet {
             estoc = Integer.parseInt(estok);
 
             dao = new LlibreDao(con);
-            resposta = dao.modificar(new Llibre(isbn, titol, autor, editorial, anyEdicio, estoc)) ? "LLIBRE MODIFICAT" : "LLIBRE NO MODIFICAT";
+            dao.modificar(new Llibre(isbn, titol, autor, editorial, anyEdicio, estoc));
         }
         return resposta;
     }
