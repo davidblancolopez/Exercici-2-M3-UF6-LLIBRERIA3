@@ -57,7 +57,7 @@ public class GestioLlibres extends HttpServlet {
             case "cercar":
                 Llibre llibre = cercarLlibre(request, response);
                 request.setAttribute("cercat", llibre);
-                anarAPagina("modificar.jsp", request, response);
+                anarAPagina("cerca.jsp", request, response);
                 break;
             case "eliminar":
                 String respostaEliminar = eliminarLlibre(request, response);

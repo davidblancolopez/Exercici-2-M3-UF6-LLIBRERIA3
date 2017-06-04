@@ -26,8 +26,38 @@
                 <tr>
                     <td align="right">ISBN:</td>
                     <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getIsbn()%>"></td>
-                    <td colspan="2" align="center"><input type="Submit" value="Cercar"></td>
-                </tr>               
+                    
+                </tr>
+                <tr>
+                    <td align="right">Títol:</td>
+                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getTitol()%>"></td>
+
+                </tr>
+                <tr>
+                    <td align="right">Autor:</td>
+                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getAutor()%>"></td>
+ 
+                </tr>
+                <tr>
+                    <td align="right">Editorial:</td>
+                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getEditorial()%>"></td>
+                    
+                </tr>
+                <tr>
+                    <td align="right">Any edició:</td>
+                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getAnyEdicio()%>"></td>
+                
+                </tr>
+                <tr>
+                    <td align="right">Estoc:</td>
+                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getEstoc()%>"></td>
+
+                </tr>
+                
+               
+                <tr>
+                   <td colspan="2" align="center"><input type="Submit" value="Cercar"></td>
+                </tr>           
 
             </table>   
 
