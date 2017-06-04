@@ -14,7 +14,7 @@
     </head>
     <body bgcolor="#FFFF99" >
 
-        <% Llibre resposta = (Llibre) request.getAttribute("cercat");%>
+        <% Llibre llibre = (Llibre) request.getAttribute("cercat");%>
         <%@ include file="myHeader.html" %>
 
         <form action="GestioLlibres?accio=cercar" method="post">            
@@ -25,32 +25,32 @@
 
                 <tr>
                     <td align="right">ISBN:</td>
-                    <td><input type="Text" name="isbn_" size="13" value="<%=resposta == null ? "" : resposta.getIsbn()%>"></td>
+                    <td><input type="Text" name="isbn_" size="13" value="<%=llibre == null ? "" : llibre.getIsbn()%>"></td>
                     
                 </tr>
                 <tr>
                     <td align="right">Títol:</td>
-                    <td><input type="Text" name="titol_" size="13" value="<%=resposta == null ? "" : resposta.getTitol()%>"></td>
+                    <td><input type="Text" name="titol_" size="30" value="<%=llibre == null ? "" : llibre.getTitol()%>"></td>
 
                 </tr>
                 <tr>
                     <td align="right">Autor:</td>
-                    <td><input type="Text" name="autor_" size="13" value="<%=resposta == null ? "" : resposta.getAutor()%>"></td>
+                    <td><input type="Text" name="autor_" size="30" value="<%=llibre == null ? "" : llibre.getAutor()%>"></td>
  
                 </tr>
                 <tr>
                     <td align="right">Editorial:</td>
-                    <td><input type="Text" name="editorial_" size="13" value="<%=resposta == null ? "" : resposta.getEditorial()%>"></td>
+                    <td><input type="Text" name="editorial_" size="30" value="<%=llibre == null ? "" : llibre.getEditorial()%>"></td>
                     
                 </tr>
                 <tr>
                     <td align="right">Any edició:</td>
-                    <td><input type="Text" name="anyEdicio_" size="13" value="<%=resposta == null ? "" : resposta.getAnyEdicio()%>"></td>
+                    <td><input type="Text" name="anyEdicio_" size="30" value="<%=llibre == null ? "" : llibre.getAnyEdicio()%>"></td>
                 
                 </tr>
                 <tr>
                     <td align="right">Estoc:</td>
-                    <td><input type="Text" name="estoc_" size="13" value="<%=resposta == null ? "" : resposta.getEstoc()%>"></td>
+                    <td><input type="Text" name="estoc_" size="30" value="<%=llibre == null ? "" : llibre.getEstoc()%>"></td>
 
                 </tr>
                 
