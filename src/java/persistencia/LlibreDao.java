@@ -13,6 +13,11 @@ public class LlibreDao {
         this.con = con;
     }
 
+    /**
+     * Metode per afegir llibres a la BBDD.
+     * @param llib
+     * @return 
+     */
     public boolean afegir(Llibre llib) {
         boolean afegit = true;
         PreparedStatement pt = null;
@@ -44,9 +49,13 @@ public class LlibreDao {
     
     
     
-    
+    /**
+     * Metode per cercar llibres per ISBN
+     * @param isbn
+     * @return 
+     */
     public Llibre cercarPerISBN(String isbn) {
-        String consulta = " SELECT * FROM LLIBRE WHERE ISBN ='" + isbn + "'";
+        String consulta = " SELECT * FROM LLIBRE WHERE ISBN='" + isbn + "'";
         Statement st;
         ResultSet rs;
         Llibre llib = null;
@@ -69,7 +78,10 @@ public class LlibreDao {
     
     
             
-            
+    /**
+     * Metode per cercar tots els llibres.
+     * @return 
+     */     
     public List<Llibre> cercarTots() {
         String consulta = "SELECT * FROM LLIBRE";
         Statement st;
@@ -94,7 +106,11 @@ public class LlibreDao {
     
     
     
-    
+    /**
+     * MEtode per eliminar llibres.
+     * @param isbn
+     * @return 
+     */
     public boolean eliminarLlibre(String isbn){
         boolean eliminat = true;
         PreparedStatement pt = null;
@@ -119,7 +135,11 @@ public class LlibreDao {
     
     
     
-    
+    /**
+     * Metode per modificar un llibre buscant el seu isbn.
+     * @param llib
+     * @return 
+     */
     public boolean modificar (Llibre llib){
         boolean modificat = true;
         PreparedStatement pt = null;
